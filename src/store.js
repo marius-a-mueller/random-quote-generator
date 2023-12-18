@@ -1,8 +1,12 @@
-import { configureStore, applyMiddleware} from '@reduxjs/toolkit';
-import { thunk } from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit';
+import colorSlice from './state/color/colorSlice';
+import dataSlice from './state/data/dataSlice';
 
-import asyncDataReducer from './reducers/asyncDataReducer';
-
-const store = configureStore(asyncDataReducer, applyMiddleware(thunk));
+const store = configureStore({
+    reducer: {
+        color: colorSlice.reducer,
+        data: dataSlice.reducer
+    }
+});
 
 export default store;
