@@ -1,4 +1,6 @@
 name: Deployment
+env:
+  CI: ""
 on:
   workflow_dispatch:
   push:
