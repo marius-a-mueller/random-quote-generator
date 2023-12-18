@@ -4,17 +4,20 @@ const dataSlice = createSlice({
     name: "data",
     initialState: {
         fetching: false,
-        quote: "Lorem Ipsum",
-        author: "Autor"
+        quote: "",
+        author: ""
     },
     reducers: {
         fetchData: (state) => {
+            console.log("fetchData")
             state.fetching = true
         },
-        receivedData: (state, action) => {
+        receivedData: (state, params) => {
+            console.log(params)
+            const { quote, author } = params.payload;
             state.fetching = false
-            state.quote = action.quote
-            state.author = action.author
+            state.quote = quote
+            state.author = author
         }
     }
 });

@@ -4,8 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import store from './store';
+import { changeColor } from './state/color/colorSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
