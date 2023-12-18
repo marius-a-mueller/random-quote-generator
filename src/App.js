@@ -67,15 +67,15 @@ const QuoteBox = ({ color, quote, author }) => {
   }
 
   const c = color;
-  const divClass = `p-2 rounded-md w-1/2 h-1/3 flex flex-col items-center bg-${c}-400 text-${c}-900 shadow-lg shadow-${c}-950 font-light`;
+  const divClass = `p-5 rounded-md w-1/2 gap-4 flex flex-col items-center justify-evenly bg-${c}-400 text-${c}-900 shadow-lg shadow-${c}-950 font-light`;
   const btnClass = `rounded bg-${c}-500 hover:bg-${c}-700 p-2`;
 
   return (
     <div id="quote-box" className={divClass}>
-      <p id="text">{quote}</p>
-      <p id="author">{author}</p>
-      <button onClick={refreshPage} id="new-quote" className={btnClass}>New Quote</button>
-      <a href="https://twitter.com/intent/tweet" id="tweet-quote">Tweet</a>
+      <p id="text" className="text-center"><em className="text-3xl">"</em><strong>{quote}</strong><em className="text-3xl">"</em></p>
+      <p id="author"><em>-</em> <em>{author}</em></p>
+      <button onClick={refreshPage} id="new-quote" className={btnClass}><i class="fa-solid fa-rotate-right"></i> New Quote</button>
+      <a href="https://twitter.com/intent/tweet" id="tweet-quote" className=""><i class="fa-brands fa-twitter"></i> Tweet</a>
     </div>
   );
 }
